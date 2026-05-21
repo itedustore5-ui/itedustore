@@ -1,0 +1,2 @@
+cd C:\Users\PC\Downloads\IT-Edu-Prep\artifacts\itedustore
+pnpm dev
