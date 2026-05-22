@@ -27,6 +27,9 @@ jobs:
         run: pnpm build
         working-directory: artifacts/itedustore
 
+      - name: Check dist
+        run: ls -la artifacts/itedustore/dist/public
+
       - uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
