@@ -152,9 +152,9 @@ export default function Home() {
         Sve što ti treba za maturski ispit — priručnik Zavoda za unapređivanje obrazovanja, zvanični testovi i interaktivna priprema.
       </motion.p>
       <motion.div variants={FADE_UP} className="flex flex-col sm:flex-row items-center md:items-start justify-center md:justify-start gap-4">
-        <a href="https://elektrotehnicari.onrender.com/" target="_blank" rel="noopener noreferrer">
+        <a href="https://elektrotehnicari.onrender.com/demo" target="_blank" rel="noopener noreferrer">
           <Button size="lg" className="w-full sm:w-auto text-lg h-14 px-8 rounded-full bg-primary hover:bg-primary/90 text-white glow-blue">
-            Probaj u aplikaciji
+           Pogledaj demo
           </Button>
         </a>
         <Button size="lg" variant="outline" className="w-full sm:w-auto text-lg h-14 px-8 rounded-full border-border hover:bg-white/5"
@@ -170,14 +170,15 @@ export default function Home() {
       initial={{ opacity: 1, x: 40 }}
       animate={{ opacity: 1, x: 0 }}
       transition={{ duration: 0.8, ease: "easeOut", delay: 0.3 }}
-      className="hidden md:block w-[260px] shrink-0 self-start mt-12"
+      className="hidden md:block w-[360px] lg:w-[420px] shrink-0 self-center md:mt-0"
       style={{ marginLeft: 'auto' }}
+     
     >
+      
       <img
         src={import.meta.env.BASE_URL + 'knjige.png'}
         alt="Knjige"
-        className="w-full object-contain opacity-25 drop-shadow-2xl"
-        style={{ filter: 'blur(1px) grayscale(20%)' }}
+       className="w-full object-contain opacity-80 drop-shadow-2xl hover:opacity-100 transition-all duration-500"
       />
     </motion.div>
 
@@ -203,7 +204,7 @@ export default function Home() {
               <h3 className="text-2xl font-bold mb-2">Priručnik</h3>
               <p className="text-muted-foreground mb-6">O polaganju maturskog ispita u obrazovnom profilu elektrotehničar računara.</p>
               <ul className="space-y-3 mb-10 flex-1">
-                {["Ocenjivanje zasnovano na kompetencijama — šta i kako se ocenjuje", "Procedure za organizaciju i izvođenje maturskog ispita", "Pripremljeno uz učešće nastavnika i socijalnih partnera", "PDF spreman za štampu"].map((item, i) => (
+                {["Ocenjivanje zasnovano na kompetencijama — šta i kako se ocenjuje", "Procedure za organizaciju i izvođenje maturskog ispita", "Pripremljeno uz učešće nastavnika"].map((item, i) => (
                   <li key={i} className="flex items-center gap-3">
                     <CheckCircle2 className="h-5 w-5 text-primary shrink-0" />
                     <span>{item}</span>
@@ -221,7 +222,7 @@ export default function Home() {
               <div className="h-12 w-12 rounded-xl bg-primary/10 flex items-center justify-center text-primary mb-6">
                 <Code className="h-6 w-6" />
               </div>
-              <h3 className="text-2xl font-bold mb-2">Interaktivna aplikacija</h3>
+              <h3 className="text-2xl font-bold mb-2">Aplikacija</h3>
               <p className="text-muted-foreground mb-6">Svih 250 pitanja sa tačnim odgovorima. Za pristup kontaktiraj admina radi lozinke.</p>
               <ul className="space-y-3 mb-6 flex-1">
                 {["250 pitanja po godini", "Trenutna provera odgovora", "Filtriranje po oblastima", "Scoreboard-vidljiv napredak"].map((item, i) => (
@@ -232,13 +233,9 @@ export default function Home() {
                 ))}
               </ul>
               <div className="flex flex-col gap-3">
-  <Button size="lg" variant="outline" className="w-full text-lg h-14 rounded-xl border-primary/50 hover:bg-primary/10 text-primary" 
-  onClick={() => window.open('https://elektrotehnicari.onrender.com/demo', '_blank')}>
-  Probaj Demo — Računarski hardver
-</Button>
-  <a href="https://elektrotehnicari.onrender.com/" target="_blank" rel="noopener noreferrer" className="w-full">
+   <a href="https://elektrotehnicari.onrender.com/" target="_blank" rel="noopener noreferrer" className="w-full">
   <Button size="lg" className="w-full text-lg h-14 rounded-xl bg-primary hover:bg-primary/90 text-white">
-    Probaj u aplikaciji
+    Uloguj se uz admin pristup
   </Button>
               </a>
             </div>
@@ -270,15 +267,15 @@ export default function Home() {
                   <ChevronRight className="text-muted-foreground group-hover:text-primary group-hover:translate-x-1 transition-all" />
                 </div>
                 <div className="space-y-2 text-sm text-muted-foreground mb-6">
-                  <div className="flex justify-between"><span>Broj pitanja:</span> <span className="text-white">250</span></div>
+                  <div className="flex justify-between"><span>Broj pitanja:</span> <span className="text-white">50</span></div>
                   <div className="flex justify-between"><span>Smer:</span> <span className="text-white text-right">Elektrotehničar računara</span></div>
-                  <div className="flex justify-between"><span>Format:</span> <span className="text-white">PDF</span></div>
+                  <div className="flex justify-between"><span>Format:</span> <span className="text-white"></span></div>
                 </div>
                 <div className="flex flex-col gap-2">
                   <Button variant="outline" className="w-full bg-transparent border-white/20 hover:bg-white/10"
                     onClick={(e) => { e.stopPropagation(); handleTestDownload(test.pdf); }}>
                     <Download className="mr-2 h-4 w-4" />
-                    Preuzmi PDF
+                    Preuzmi test
                   </Button>
                   <Button className="w-full bg-primary hover:bg-primary/90 text-white"
                     onClick={(e) => { e.stopPropagation(); window.open(test.link, '_blank'); }}>
@@ -297,7 +294,7 @@ export default function Home() {
           <div className="grid grid-cols-2 md:grid-cols-3 gap-8 text-center divide-x divide-white/10">
            
             <div>
-              <div className="text-4xl md:text-5xl font-black text-primary mb-2">50</div>
+              <div className="text-4xl md:text-5xl font-black text-primary mb-2">250</div>
               <div className="text-sm text-muted-foreground uppercase tracking-wider font-semibold">Pitanja po testu</div>
             </div>
             <div>
@@ -509,6 +506,6 @@ export default function Home() {
   </DialogContent>
 </Dialog>
 
-    </div>
+   </div>
   );
 }
