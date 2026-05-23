@@ -500,7 +500,6 @@ export default function Home() {
           </Button>
         </a>
         <a href="https://tiktok.com/@TVOJ_PROFIL" target="_blank" rel="noopener noreferrer" className="flex-1">
-          
           <Button variant="outline" className="w-full h-11 text-sm border-white/20 hover:bg-white/10">
             🎵 TikTok
           </Button>
